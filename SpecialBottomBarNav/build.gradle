@@ -64,10 +64,12 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.erix-mx'
-                artifactId = 'specialbottombarnav'
+                artifactId = 'special-bottom-bar'
                 version = '0.0.3-alpha01'
             }
         }
     }
 }
+
+
 
