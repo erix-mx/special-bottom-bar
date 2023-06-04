@@ -24,9 +24,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import mx.erix.specialbottombar.ui.theme.SpecialBottomBarTheme
-import mx.erix.specialbottombarnav.R
-import mx.erix.specialbottombarnav.components.SpecialBottomBarAdd
 import mx.erix.specialbottombarnav.data.SpecialBottom
+
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -40,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     var itemSelected by remember { mutableStateOf(SpecialBottom.Id("home1")) }
                     Scaffold(
                         bottomBar = {
-                            SpecialBottomBarAdd(
+                            /*SpecialBottomBarAdd(
                                 menuItems = listOf(
                                     SpecialBottom.Item(
                                         icon = R.drawable.ic_outline_home,
@@ -81,7 +80,7 @@ class MainActivity : ComponentActivity() {
                                 theme = SpecialBottom.Theme(
                                     iconAdd = R.drawable.ic_outline_home,
                                 )
-                            )
+                            )*/
                         },
                     ) { paddingValues ->
 
