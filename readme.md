@@ -61,7 +61,7 @@ fun MyBottomBar(
 
 ## Configurar Badge
 
-![SBBSS03.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SBBSS02.png?alt=media&token=73b28fa7-9f16-48b9-9724-ef53172ad79d&_gl=1*1mo1siq*_ga*MTcxMTQyNzU4Ny4xNjIyNDg1NTgx*_ga_CW55HF8NVT*MTY4NTkzNDQ5NC40LjEuMTY4NTkzNDU5OC4wLjAuMA..)
+![SBBSS03.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SBBSS03.png?alt=media&token=2ca08b79-bbe9-4cd4-99ee-9bdddbdeb38d&_gl=1*4q2k0b*_ga*MTcxMTQyNzU4Ny4xNjIyNDg1NTgx*_ga_CW55HF8NVT*MTY4NTkzNDQ5NC40LjEuMTY4NTkzNDYwNS4wLjAuMA..)
 
 Badge con algún texto
 
@@ -98,7 +98,7 @@ SpecialBottom.Item(
 
 Esta versión agrega un botón principal en el centro del Navigation Bottom Bar
 
-![SBBSS02.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SBBSS03.png?alt=media&token=2ca08b79-bbe9-4cd4-99ee-9bdddbdeb38d&_gl=1*4q2k0b*_ga*MTcxMTQyNzU4Ny4xNjIyNDg1NTgx*_ga_CW55HF8NVT*MTY4NTkzNDQ5NC40LjEuMTY4NTkzNDYwNS4wLjAuMA..)
+![SBBSS02.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SBBSS02.png?alt=media&token=73b28fa7-9f16-48b9-9724-ef53172ad79d&_gl=1*1mo1siq*_ga*MTcxMTQyNzU4Ny4xNjIyNDg1NTgx*_ga_CW55HF8NVT*MTY4NTkzNDQ5NC40LjEuMTY4NTkzNDU5OC4wLjAuMA..)
 
 ```kotlin
 @Composable
