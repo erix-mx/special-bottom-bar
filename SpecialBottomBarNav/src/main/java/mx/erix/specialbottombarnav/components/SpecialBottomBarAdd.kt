@@ -22,7 +22,7 @@ import mx.erix.specialbottombarnav.data.SpecialBottom
 import mx.erix.specialbottombarnav.ext.customShadow
 
 @Composable
-fun SpecialBottomBarAdd(
+fun SpecialBottomBarPlus(
 
     modifier: Modifier = Modifier,
     menuItems: List<SpecialBottom.Item> = listOf(),
@@ -42,7 +42,7 @@ fun SpecialBottomBarAdd(
             Box(modifier = Modifier
                 .size(100.dp)
                 .customShadow(
-                    color = theme.selectedColor.copy(alpha = 0.1f),
+                    color = theme.shadowColor.copy(alpha = 0.1f),
                     borderRadius = theme.borderRadius,
                     blurRadius = theme.blurRadius,
                     offsetY = 0.dp,
@@ -57,7 +57,7 @@ fun SpecialBottomBarAdd(
         Box(
             modifier = Modifier
                 .customShadow(
-                    color = theme.selectedColor.copy(alpha = 0.2f),
+                    color = theme.shadowColor.copy(alpha = 0.2f),
                     borderRadius = theme.borderRadius,
                     blurRadius = theme.blurRadius,
                     offsetY = 0.dp,
@@ -85,7 +85,7 @@ fun SpecialBottomBarAdd(
                         ItemSpecialMenu(
                             startAnimation = theme.startAnimation,
                             color = if (item.id == currentSelected) theme.selectedColor else theme.unselectedColor,
-                            config = item,
+                            item = item,
                             isSelected = item.id == currentSelected,
                             click = { onItemSelected(item.id) }
                         )
@@ -101,7 +101,7 @@ fun SpecialBottomBarAdd(
                         ItemSpecialMenu(
                             startAnimation = theme.startAnimation,
                             color = if (item.id == currentSelected) theme.selectedColor else theme.unselectedColor,
-                            config = item,
+                            item = item,
                             isSelected = item.id == currentSelected,
                             click = { onItemSelected(item.id) }
                         )
@@ -111,7 +111,7 @@ fun SpecialBottomBarAdd(
         }
 
         Row {
-            AddButton(
+            PlusButton(
                 theme = theme,
                 click = clickAdd
             )
@@ -128,7 +128,7 @@ fun SpecialBottomBarAdd(
 )
 @Composable
 fun SpecialBottomBarAddPreview() {
-    SpecialBottomBarAdd(
+    SpecialBottomBarPlus(
         currentSelected = SpecialBottom.Id("home1")
     )
 }

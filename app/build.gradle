@@ -24,6 +24,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".debug"
+
         }
     }
     compileOptions {
@@ -48,11 +57,17 @@ android {
 
 dependencies {
 
-    //implementation project(':SpecialBottomBarNav')
-    implementation 'com.github.erix-mx:special-bottom-bar:0.0.3-alpha01'
+    implementation project(':SpecialBottomBarNav')
+    //implementation 'com.github.erix-mx:special-bottom-bar:0.0.3-alpha01'
 
     // Accompanist
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.30.1"
+
+    //ViewModel Compose
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
+
+    //Coil
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'

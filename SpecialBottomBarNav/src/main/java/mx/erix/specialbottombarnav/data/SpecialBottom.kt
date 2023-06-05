@@ -17,7 +17,7 @@ sealed class SpecialBottom {
     data class Item(
         @DrawableRes val icon: Int,
         @DrawableRes val activatedIcon: Int,
-        val text: String,
+        val tag: String,
         val id: SpecialBottom.Id,
         val badge: SpecialBottom.Badge? = null
     ) : SpecialBottom()
@@ -26,11 +26,15 @@ sealed class SpecialBottom {
         val backgroundColor: Color = Color.White,
         val selectedColor: Color = Color.Black,
         val unselectedColor: Color = Color.Gray,
+        val shadowColor: Color = selectedColor,
         val spread: Dp = 8.dp,
         val blurRadius: Dp = 16.dp,
         val borderRadius: Dp = 32.dp,
         val startAnimation: Boolean = true,
-        @DrawableRes val iconAdd: Int? = null,
+        @DrawableRes val iconPlus: Int? = null,
+
+        //Button Plus
+        val backGroundSecondaryColor: Color = backgroundColor,
     ) : SpecialBottom()
 
 }

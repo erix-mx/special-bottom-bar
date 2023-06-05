@@ -13,7 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,7 +24,7 @@ import mx.erix.specialbottombarnav.R
 import mx.erix.specialbottombarnav.data.SpecialBottom
 
 @Composable
-fun AddButton(
+fun PlusButton(
     theme: SpecialBottom.Theme = SpecialBottom.Theme(),
     click: () -> Unit = {}
 ) {
@@ -40,7 +42,7 @@ fun AddButton(
                 .fillMaxSize()
                 .clip(CircleShape)
                 .background(theme.selectedColor.copy(alpha = 0.2f))
-                .padding(6.dp),
+                .padding(7.dp),
             contentAlignment = Alignment.Center
         ) {
 
@@ -48,11 +50,21 @@ fun AddButton(
                 modifier = Modifier
                     .fillMaxSize()
                     .clip(CircleShape)
-                    .background(theme.selectedColor)
+                    .background(
+                        brush = androidx.compose.ui.graphics.Brush.linearGradient(
+                            colors = listOf(
+                                theme.selectedColor,
+                                theme.backGroundSecondaryColor
+                            ),
+                            start = Offset(0f, 0f),
+                            end = Offset.Infinite,
+                            tileMode = TileMode.Clamp,
+                        )
+                    )
                     .clickable { click() },
                 contentAlignment = Alignment.Center
             ) {
-                theme.iconAdd?.let {
+                theme.iconPlus?.let {
                     Icon(
                         tint = theme.backgroundColor,
                         modifier = Modifier.width(32.dp),
@@ -69,11 +81,11 @@ fun AddButton(
 @Preview
 @Composable
 fun AddButtonPreview() {
-    AddButton(
+    PlusButton(
         theme = SpecialBottom.Theme(
             backgroundColor = Color.Red,
             selectedColor = Color.Yellow,
-            iconAdd = R.drawable.ic_outline_home
+            iconPlus = R.drawable.ic_outline_radio
         )
     )
 }

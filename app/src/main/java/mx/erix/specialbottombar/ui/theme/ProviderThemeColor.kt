@@ -6,10 +6,10 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
 
 data class ThemeColor(
-    val name: String = "dark-zero",
+    val name: String = "Theme 1",
     val isDark: Boolean = true,
     val theme: ColorScheme = darkColorScheme(
-        primary = Color(0xFF6200EE),
+        primary = Color(0xFF6950F1),
         secondary = Color(0xFF5238E9),
         surface = Color(0xFF272938),
         background = Color(0xFF191920),
@@ -22,7 +22,7 @@ val themeList = listOf(
     ThemeColor(),
 
     ThemeColor(
-        name = "light-theme-1",
+        name = "Theme 2",
         isDark = false,
         theme = lightColorScheme(
             primary = Color(0xFFCF5CAB),
@@ -34,7 +34,7 @@ val themeList = listOf(
     ),
 
     ThemeColor(
-        name = "dark-theme-1",
+        name = "Theme 3",
         isDark = true,
         theme = darkColorScheme(
             primary = Color(0xFFA752A5),
@@ -46,7 +46,7 @@ val themeList = listOf(
     ),
 
     ThemeColor(
-        name = "dark-theme-2",
+        name = "Theme 4",
         isDark = true,
         theme = darkColorScheme(
             primary = Color(0xFFE15D29),
@@ -58,7 +58,7 @@ val themeList = listOf(
     ),
 
     ThemeColor(
-        name = "light-theme-2",
+        name = "Theme 5",
         isDark = false,
         theme = lightColorScheme(
             primary = Color(0xFFE59398),

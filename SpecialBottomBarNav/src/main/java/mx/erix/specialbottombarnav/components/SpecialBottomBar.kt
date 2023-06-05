@@ -36,7 +36,7 @@ fun SpecialBottomBar(
         Box(
             modifier = Modifier
                 .customShadow(
-                    color = theme.selectedColor.copy(alpha = 0.15f),
+                    color = theme.shadowColor.copy(alpha = 0.15f),
                     borderRadius = theme.borderRadius,
                     blurRadius = theme.blurRadius,
                     offsetY = 0.dp,
@@ -59,8 +59,8 @@ fun SpecialBottomBar(
                 menuItems.forEach { item ->
                     ItemSpecialMenu(
                         startAnimation = theme.startAnimation,
-                        color = if (item.id == currentSelected) theme.selectedColor else theme.unselectedColor,
-                        config = item,
+                        color = if (item.id == currentSelected) theme.selectedColor else theme.unselectedColor.copy(alpha = 0.6f),
+                        item = item,
                         isSelected = item.id == currentSelected,
                         click = { onItemSelected(item.id) }
                     )

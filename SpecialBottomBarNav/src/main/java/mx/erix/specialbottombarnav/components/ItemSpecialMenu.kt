@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,13 +33,13 @@ import mx.erix.specialbottombarnav.data.SpecialBottom
 @Composable
 fun ItemSpecialMenu(
     startAnimation: Boolean = true,
-    config: SpecialBottom.Item,
+    item: SpecialBottom.Item,
     isSelected: Boolean = false,
     color: Color = Color.Black,
     click: () -> Unit = {}
 ) {
 
-    val iconSelected = if (isSelected) config.activatedIcon else config.icon
+    val iconSelected = if (isSelected) item.activatedIcon else item.icon
     val iconSize = remember {
         Animatable(if (startAnimation) 0f else 29.dp.value)
     }
@@ -58,7 +59,7 @@ fun ItemSpecialMenu(
                 indication = null,
                 interactionSource = remember { MutableInteractionSource() }
             ) { click() }
-            .padding(horizontal = 8.dp, vertical = 4.dp),
+            .padding(horizontal = 2.dp, vertical = 4.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -79,10 +80,12 @@ fun ItemSpecialMenu(
                     }
                     .width(iconSize.value.dp),
                 imageVector = ImageVector.vectorResource(id = iconSelected),
-                contentDescription = config.text
+                contentDescription = item.tag
             )
 
-            config.badge?.let {
+            item.badge?.let {
+
+
                 SpecialBadge(
                     config = it,
                     modifier = Modifier
@@ -99,9 +102,10 @@ fun ItemSpecialMenu(
         Text(
             color = color,
             fontSize = 12.sp,
-            text = config.text,
+            text = item.tag,
             maxLines = 1,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
+            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
         )
         Spacer(modifier = Modifier.size(2.dp))
     }
@@ -113,10 +117,10 @@ fun ItemSpecialMenu(
 @Composable
 fun ItemMenuPreview() {
     ItemSpecialMenu(
-        config = SpecialBottom.Item(
-            icon = R.drawable.ic_outline_home,
-            activatedIcon = R.drawable.ic_fill_home,
-            text = "Home",
+        item = SpecialBottom.Item(
+            icon = R.drawable.ic_outline_radio,
+            activatedIcon = R.drawable.ic_fill_radio,
+            tag = "Home",
             id = SpecialBottom.Id("home1"),
             badge = SpecialBottom.Badge(
                 text = "1",
@@ -135,10 +139,10 @@ fun ItemMenuPreview() {
 @Composable
 fun ItemMenuSimpleBadgePreview() {
     ItemSpecialMenu(
-        config = SpecialBottom.Item(
-            icon = R.drawable.ic_outline_home,
-            activatedIcon = R.drawable.ic_fill_home,
-            text = "Home",
+        item = SpecialBottom.Item(
+            icon = R.drawable.ic_outline_radio,
+            activatedIcon = R.drawable.ic_fill_radio,
+            tag = "Home",
             id = SpecialBottom.Id("home1"),
             badge = SpecialBottom.Badge(
                 backgroundColor = Color.Black,
